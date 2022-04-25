@@ -1,0 +1,103 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>My first Leaflet</title>
+<link href=”samutprakan.css” rel=”stylesheet” type=”text/css” />
+<!-- Link leaflet css and javascript-->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+
+</head>
+<body>
+<BODY BACKGROUND="picture1.gif"> </BODY>  
+<h1>SAMUTPRAKAN MAP</h1>
+<ul>
+  <li><a class="active" href="#Home">หน้าหลัก</a></li>
+  <li><a href="#restaurant">ร้านอาหาร</a></li>
+  <li><a href="#government office">สถานที่ราชการ</a></li>
+  <li><a href="#contact">ติดต่อ</a></li>
+</ul>
+<div id="map" style="width: 800px; height: 600px"></div>
+<script>
+var map = L.map('map').setView([13.661600244873684, 100.71754380794373],13);
+
+mapLink ='<a href="http://openstreetmap.org">kanyaphak</a>';
+
+L.tileLayer(
+'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+attribution: 'Map data &copy; ' + mapLink,
+maxZoom: 18,
+}).addTo(map);
+
+var marker = L.marker([13.66190856355119, 100.71813636710358],
+{
+
+
+draggable:true,
+title:'ร้านอาหาร',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>พิ้งค์โก๊ะก๋วยเตี๋ยวเนื้อ</b>")
+.openPopup();
+
+var marker = L.marker([13.662218880548467, 100.71679427667662],
+{
+
+
+draggable:true,
+title:'สถานที่ราชการ',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>องค์การบริหารส่วนตำบลราชาเทวะ</b>")
+.openPopup();
+
+var marker = L.marker([13.650323636027741, 100.71500069310979],
+{
+
+
+draggable:true,
+title:'ตลาด',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>ตลาดบันได</b>")
+.openPopup();
+
+var marker = L.marker([13.641548082507843, 100.71385396749729],
+{
+
+
+draggable:true,
+title:'สถานที่ราชการ',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>การไฟฟ้านครหลวงเขตบางพลี</b>")
+.openPopup();
+
+var marker = L.marker([13.698058377853988, 100.75221246082987],
+{
+
+
+draggable:true,
+title:'สถานที่ราชการ',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>สนามบินสุวรรรภูมิ</b>")
+.openPopup();
+
+
+
+</script>
+</body>
+</html>
